@@ -72,7 +72,7 @@ def newTeacher():
     else:
         return render_template('newTeacher.html')
 
-@app.route("/teachers/<int:book_id/edit>", methods=['POST', 'GET'])
+@app.route("/teachers/<int:book_id>/edit", methods=['POST', 'GET'])
 def editTeacher(teacher_id):
     editedTeacher = session.query(Teacher).filtered_by(id=teacher_id).one()
     if request.method == 'POST':
